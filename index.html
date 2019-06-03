@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành sự kiện bàn phím</title>
+</head>
+<body onload="doReady()">
+<img id="nobita" src="nobita.jpg" style="position:absolute;left:0;top:0" height="100" width="80"/>
+<script>
+    //buoc 1. chen anh nobita vào
+//Buoc 2. xay dung cac ham xu ly khi an phim len
+    function upArrowPressed() {
+        let element = document.getElementById("nobita");
+        element.style.top = parseInt(element.style.top) - 5 + "px";
+    }
+    //Buoc 3.Xay dung cac ham xu ly khi an phim xuong
+    function downArrowPressed() {
+        let element= document.getElementById("nobita");
+        element.style.top=parseInt(element.style.top)+5+"px";
+    }
+    //Buoc 3. Xay dung cac ham xu ly khi an phim trai
+    function leftArrowPressed() {
+        let element= document.getElementById("nobita");
+        element.style.left=parseInt(element.style.left)-5+"px";
+    }
+    //Buoc 4. Xay dung cac ham xu ly khi an phim sang phai
+    function rightArrowPressed() {
+        let element=document.getElementById("nobita");
+        element.style.left=parseInt(element.style.left)+5+"px";
+    }
+    //Buoc 6. Xay dung cac ham nhan cac su kien ban phim
+    function moveSelection(evt) {
+        switch(evt.keyCode) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+    //Buoc 6. Xay dung ham doReady()
+    function doReady() {
+        window.addEventListener('keydown',moveSelection);
+
+    }
+    //Buoc 8.Goi ham doReady() <body onload=doReady>
+    //Buoc9. chay chuong trinh
+</script>
+
+
+</body>
+</html>
